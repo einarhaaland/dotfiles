@@ -1,3 +1,3 @@
-zsh: zsh `init.sh`
-bash: `bash init.sh`
-zsh/bash/dash: `sh init.sh`
+`sh init.sh`
+
+* Add a `.localrc` in `$HOME` to add machine specific cfg
