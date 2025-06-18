@@ -5,7 +5,7 @@ if [ -n "$BASH_VERSION" ]; then
 elif [ -n "$ZSH_VERSION" ]; then
   SCRIPT_DIR="$(cd "$(dirname "${(%):-%N}")" && pwd)"
 else
-  echo "Unsupported shell, you are likely using dash. Run `zsh init.sh` or ´bash init.sh´ to load respective .*rc"
+  echo "Unsupported shell, you are likely using dash. Run `zsh init.sh` or ´bash init.sh´ to source .zshrc or .bashrc respectively"
 fi
 
 
@@ -23,6 +23,8 @@ if [ "$REPO_NAME" != "dotfiles" ]; then
     exit 1
 fi
 
+git --git-dir=$GITSRC config --local status.showUntrackedFiles no
+
 if [ -e "$GITDST" ]; then
     echo "The git directory '$GITDST' already exists"
     echo "What do you want to do? [o]verwrite / [k]eep / [a]bort"
@@ -39,7 +41,7 @@ if [ -e "$GITDST" ]; then
                 else
                     echo "Overwriting existing directory..."
                     rm -rf "$GITDST"
-                    cp -r "$GITSRC" "$GITDST"
+                    cp -R "$GITSRC" "$GITDST"
                     break
                 fi
                 ;;
@@ -57,19 +59,26 @@ if [ -e "$GITDST" ]; then
         esac
     done
 else
-    cp -r $GITSRC $GITDST
+    echo "Creating $GITDST..."
+    cp -R $GITSRC $GITDST
+    echo "Creating $GITDST... Done!\n"
 fi
 
-cp -Riv "$SCRIPT_DIR/"* "$HOME"
+echo "Copying configuration files into $HOME..."
+find "$CURDIR" -mindepth 1 -maxdepth 1 ! -name '.git' -exec cp -Riv {} "$HOME/" \;
+echo "Copying configuration files into $HOME... Done!\n"
 
 if [ -n "$BASH_VERSION" ]; then
-  source "$HOME/.bashrc"
+    echo "sourcing .bashrc ..."
+    source "$HOME/.bashrc"
+    echo "... Done!\n"
 elif [ -n "$ZSH_VERSION" ]; then
-  source "$HOME/.zshrc"
+    echo "sourcing .zshrc ..."
+    source "$HOME/.zshrc"
+    echo "... Done!\n"
 fi
 
-
-cfg config --local status.showUntrackedFiles no
+alias cfg=git --git-dir=$HOME/.cfg/ --work-tree=$HOME
 
 echo "Initialization complete."
 echo ""
