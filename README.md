@@ -1,3 +1,5 @@
-`sh init.sh`
+```
+sh init.sh
+```
 
-* Add a `.localrc` in `$HOME` to add machine specific cfg
+For machine specific cfg, add a `.localrc` in `$HOME` and reload shell.
