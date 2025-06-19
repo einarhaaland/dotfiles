@@ -13,8 +13,6 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 
-alias clip="wl-copy"
-
 alias gs="git status"
 alias gl="git log"
 alias glg="git log --graph --oneline --decorate --all"
