@@ -1,10 +1,10 @@
 # Prompt
-PS1='%F{cyan}%n%f:%1~%# '
+PS1="%F{cyan}%n%f:%1~%# "
 
 
 # Aliases
-alias ..='cd ..'
-alias ...='cd ../..'
+alias ..="cd .."
+alias ...="cd ../.."
 
 alias ll="ls -lh"
 alias la="ll -a"
