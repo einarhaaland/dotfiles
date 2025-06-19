@@ -1,5 +1,5 @@
 ```
-sh init.sh
+zsh init.sh
 ```
 
 For machine specific cfg, add a `.localrc` in `$HOME` and reload shell.
