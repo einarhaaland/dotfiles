@@ -27,6 +27,8 @@ export LANG="en_US.UTF-8"
 # Autocomplete
 autoload -Uz compinit && compinit
 
+# Cfg editing
+alias "cfg=git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # History
 HISTFILE=~/.zsh_history

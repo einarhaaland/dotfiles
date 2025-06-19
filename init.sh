@@ -78,7 +78,7 @@ elif [ -n "$ZSH_VERSION" ]; then
     echo "... Done!\n"
 fi
 
-alias cfg=git --git-dir=$HOME/.cfg/ --work-tree=$HOME
+alias cfg="git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 echo "Initialization complete."
 echo ""
