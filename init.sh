@@ -11,7 +11,7 @@ fi
 
 GITDST="$HOME/.cfg"
 GITSRC="$SCRIPT_DIR/.git"
-REPO_NAME=$(basename "$(git -C "$CURDIR" rev-parse --show-toplevel)")
+REPO_NAME=$(basename "$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel)")
 
 if [ "$SCRIPT_DIR" = "$HOME" ]; then
     echo "Initialization already done, nothing to do."
@@ -65,7 +65,7 @@ else
 fi
 
 echo "Copying configuration files into $HOME..."
-find "$CURDIR" -mindepth 1 -maxdepth 1 ! -name '.git' -exec cp -Riv {} "$HOME/" \;
+find "$SCRIPT_DIR" -mindepth 1 -maxdepth 1 ! -name '.git' -exec cp -Riv {} "$HOME/" \;
 echo "Copying configuration files into $HOME... Done!\n"
 
 if [ -n "$BASH_VERSION" ]; then
