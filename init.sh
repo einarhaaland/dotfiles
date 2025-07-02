@@ -5,7 +5,8 @@ if [ -n "$BASH_VERSION" ]; then
 elif [ -n "$ZSH_VERSION" ]; then
   SCRIPT_DIR="$(cd "$(dirname "${(%):-%N}")" && pwd)"
 else
-  echo "Unsupported shell, you are likely using dash. Run `zsh init.sh` or ´bash init.sh´ to source .zshrc or .bashrc respectively"
+  echo "Unsupported shell, use zsh or bash."
+  exit 1
 fi
 
 
