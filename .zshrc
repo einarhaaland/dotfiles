@@ -6,8 +6,8 @@ PS1="%F{cyan}%n%f:%1~%# "
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias ll="ls -lh"
-alias la="ll -a"
+alias ll="ls -lh --color=auto"
+alias la="ls -lha --color=auto"
 
 alias rm="rm -i"
 alias cp="cp -i"
