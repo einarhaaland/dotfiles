@@ -1,6 +1,9 @@
 # Prompt
 PS1="%F{cyan}%n%f:%1~%# "
 
+# Enable vim bindings
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 # Aliases
 alias ..="cd .."
