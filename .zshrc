@@ -15,8 +15,6 @@ alias la="ls -lha --color=auto"
 alias cp="cp -i"
 alias mv="mv -i"
 
-alias gs="git status"
-alias gl="git log"
 alias glg="git log --graph --oneline --decorate --all"
 
 
