@@ -12,7 +12,6 @@ alias ...="cd ../.."
 alias ll="ls -lh --color=auto"
 alias la="ls -lha --color=auto"
 
-alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 
