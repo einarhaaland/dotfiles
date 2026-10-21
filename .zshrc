@@ -53,3 +53,7 @@ case "$(uname)" in
     ;;
 esac
 
+# Cargo global build target dir
+export CARGO_TARGET_DIR="$HOME/.cache/cargo-target"
+export CARGO_INCREMENTAL=0
+
